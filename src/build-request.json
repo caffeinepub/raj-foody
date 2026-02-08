@@ -1,0 +1,120 @@
+{
+  "kind": "build_request",
+  "title": "Create a simple marketing website for Raj Foody (Jeet Raj)",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a responsive single-page marketing website for the food business named \"Raj Foody\" with the owner name \"Jeet Raj\" clearly displayed in the hero and/or footer.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Mere liye ek website banao jisme me food ka kaam kerta hu my name jeet raj and my shop name raj foody"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The homepage renders without errors and is usable on mobile and desktop breakpoints.",
+        "The text \"Raj Foody\" and \"Jeet Raj\" appear on the page in prominent positions (e.g., hero + footer)."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Implement standard homepage sections with English headings and placeholder content that can be easily edited: Top navigation (anchors), Hero (headline + short tagline), About (short paragraph), Menu/Offerings (at least 6 items with name/price/description), Why Choose Us (3–5 highlights), Gallery section (image grid), Testimonials (3 items), and Contact section (contact form UI + placeholder phone/email/address + opening hours).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Mere liye ek website banao jisme me food ka kaam kerta hu my name jeet raj and my shop name raj foody"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Navbar links scroll to the correct sections on the same page.",
+        "Menu section displays at least 6 items with name, price, and description.",
+        "Contact section includes a visible form with fields: Name, Phone (or Email), Message, and a Submit button (form can be non-functional if backend is not implemented)."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Apply a coherent, food-themed visual design system across the site (colors, typography, spacing, and component styling) with a warm, appetizing palette (avoid blue/purple). Use consistent button styles, card styles, and section spacing.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The UI uses a consistent color palette and typography across all sections.",
+        "Primary/secondary buttons have consistent styling and hover/focus states.",
+        "The site maintains clear visual hierarchy (hero > sections > cards)."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Add a simple data/config layer on the frontend (single file or small set of files) containing editable business info (shop name, owner name, tagline, menu items, hours, contact placeholders) and render the page from this data so content changes do not require editing multiple components.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Business name, owner name, and menu items are sourced from a centralized configuration object/file.",
+        "Changing the config values updates the rendered UI accordingly."
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Include the required generated images as static assets under frontend/public/assets/generated and wire them into the Hero and Gallery sections (no backend image routing).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Generated images exist in frontend/public/assets/generated and are referenced directly by the frontend.",
+        "Hero uses the hero image; Gallery uses the gallery images in a grid layout."
+      ]
+    }
+  ],
+  "constraints": [
+    "Use English for all user-facing text rendered by the website.",
+    "Frontend immutable paths must not be edited: frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, frontend/src/components/ui.",
+    "No external databases or non-Motoko backends; keep within the provided React + Motoko template constraints."
+  ],
+  "nonGoals": [
+    "Online ordering, payments, delivery tracking, or cart/checkout flows.",
+    "Third-party authentication providers (only Internet Identity is allowed, but not required for this website).",
+    "Real-time chat, push notifications, or email/SMS sending integrations."
+  ],
+  "imageRequirements": {
+    "required": [
+      "Raj Foody logo mark, modern minimal food-themed emblem (raj-foody-logo.dim_512x512.png)",
+      "Wide hero banner photo-illustration of Indian street food counter, warm lighting, shallow depth of field (raj-foody-hero.dim_1600x900.png)",
+      "Gallery image 1: close-up plated snack food, warm tones, high contrast (raj-foody-gallery-1.dim_1200x800.png)",
+      "Gallery image 2: chef hands preparing food, cinematic warm lighting (raj-foody-gallery-2.dim_1200x800.png)",
+      "Gallery image 3: assorted dishes on rustic table, top-down composition (raj-foody-gallery-3.dim_1200x800.png)",
+      "Gallery image 4: storefront/signage style food shop scene, evening ambiance (raj-foody-gallery-4.dim_1200x800.png)"
+    ],
+    "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [
+      "Build a marketing website for a food shop named Raj Foody owned by Jeet Raj."
+    ],
+    "goalsToRemove": [],
+    "preferencesToAdd": [
+      "Use English for user-facing site copy."
+    ],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Build a website for Jeet Raj's food business/shop named \"Raj Foody\".",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Raj Foody logo mark, modern minimal food-themed emblem (raj-foody-logo.dim_512x512.png)\n- Wide hero banner photo-illustration of Indian street food counter, warm lighting, shallow depth of field (raj-foody-hero.dim_1600x900.png)\n- Gallery image 1: close-up plated snack food, warm tones, high contrast (raj-foody-gallery-1.dim_1200x800.png)\n- Gallery image 2: chef hands preparing food, cinematic warm lighting (raj-foody-gallery-2.dim_1200x800.png)\n- Gallery image 3: assorted dishes on rustic table, top-down composition (raj-foody-gallery-3.dim_1200x800.png)\n- Gallery image 4: storefront/signage style food shop scene, evening ambiance (raj-foody-gallery-4.dim_1200x800.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-responsive-single-page-marketing-website-for-the-food-business-named-raj-foody-with-the-owner-name-jeet-raj-clearly-displayed-in-the-hero-and-or-footer",
+      "title": "Create a responsive single-page marketing website for the food business named \"Raj Foody\" with the owner name \"Jeet Raj\" clearly displayed in the hero and/or footer.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-standard-homepage-sections-with-english-headings-and-placeholder-content-that-can-be-easily-edited-top-navigation-anchors-hero-headline-short-tagline-about-short-paragraph-menu-offerings-at-least-6-items-with-name-price-description-why-choose-us-3-5-highlights-gallery-section-image-grid-testimonials-3-items-and-contact-section-contact-form-ui-placeholder-phone-email-address-opening-hours",
+      "title": "Implement standard homepage sections with English headings and placeholder content that can be easily edited: Top navigation (anchors), Hero (headline + short tagline), About (short paragraph), Menu/Offerings (at least 6 items with name/price/description), Why Choose Us (3–5 highlights), Gallery section (image grid), Testimonials (3 items), and Contact section (contact form UI + placeholder phone/email/address + opening hours).",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-coherent-food-themed-visual-design-system-across-the-site-colors-typography-spacing-and-component-styling-with-a-warm-appetizing-palette-avoid-blue-purple-use-consistent-button-styles-card-styles-and-section-spacing",
+      "title": "Apply a coherent, food-themed visual design system across the site (colors, typography, spacing, and component styling) with a warm, appetizing palette (avoid blue/purple). Use consistent button styles, card styles, and section spacing.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-simple-data-config-layer-on-the-frontend-single-file-or-small-set-of-files-containing-editable-business-info-shop-name-owner-name-tagline-menu-items-hours-contact-placeholders-and-render-the-page-from-this-data-so-content-changes-do-not-require-editing-multiple-components",
+      "title": "Add a simple data/config layer on the frontend (single file or small set of files) containing editable business info (shop name, owner name, tagline, menu items, hours, contact placeholders) and render the page from this data so content changes do not require editing multiple components.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-include-the-required-generated-images-as-static-assets-under-frontend-public-assets-generated-and-wire-them-into-the-hero-and-gallery-sections-no-backend-image-routing",
+      "title": "Include the required generated images as static assets under frontend/public/assets/generated and wire them into the Hero and Gallery sections (no backend image routing).",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create a website for the food business \"Raj Foody\" (owner: Jeet Raj).",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Raj Foody",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

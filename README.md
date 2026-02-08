@@ -1,2 +1,3 @@
-# raj-foody
-Exported from Caffeine project: Raj Foody
+## Raj Foody
+
+To run app build and run docker image: `docker build -t app . docker run -it --network host app`

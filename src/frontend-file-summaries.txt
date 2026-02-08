@@ -1,0 +1,16 @@
+{
+  "frontend/src/App.tsx": "Main application component that orchestrates all marketing sections and passes content from the centralized config to each section component.",
+  "frontend/src/content/rajFoodyContent.ts": "Centralized content configuration containing all editable business information including menu items, testimonials, contact details, and image paths.",
+  "frontend/src/components/marketing/TopNav.tsx": "Fixed navigation bar with logo, smooth scroll anchor links, and responsive mobile menu.",
+  "frontend/src/components/marketing/sections/HeroSection.tsx": "Hero section with background image, business name, owner name, tagline, and call-to-action buttons.",
+  "frontend/src/components/marketing/sections/AboutSection.tsx": "About section displaying the business description in a centered layout.",
+  "frontend/src/components/marketing/sections/MenuSection.tsx": "Menu section displaying food items in a responsive card grid with name, price, and description.",
+  "frontend/src/components/marketing/sections/WhyChooseUsSection.tsx": "Why Choose Us section showcasing business highlights with icons in a card grid layout.",
+  "frontend/src/components/marketing/sections/GallerySection.tsx": "Gallery section displaying food and business images in a responsive grid with hover effects.",
+  "frontend/src/components/marketing/sections/TestimonialsSection.tsx": "Testimonials section showing customer reviews in card format with quote styling.",
+  "frontend/src/components/marketing/sections/ContactSection.tsx": "Contact section with business information cards and a non-functional demo contact form.",
+  "frontend/src/components/marketing/Footer.tsx": "Footer component displaying business branding, owner name, and attribution with caffeine.ai link.",
+  "frontend/src/index.css": "Global styles with warm, food-themed OKLCH color system optimized for both light and dark modes.",
+  "frontend/tailwind.config.js": "Tailwind configuration with extended theme tokens for the warm, appetizing color palette and custom font settings.",
+  "frontend/src/hooks/useQueries.ts": "Empty placeholder file for future React Query hooks if backend functionality is added."
+}

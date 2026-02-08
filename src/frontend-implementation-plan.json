@@ -1,0 +1,199 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Raj Foody (Jeet Raj) single-page marketing site",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Build a responsive single-page homepage that prominently displays “Raj Foody” and “Jeet Raj”.",
+      "acceptanceCriteria": [
+        "The homepage renders without errors and is usable on mobile and desktop breakpoints.",
+        "The text \"Raj Foody\" and \"Jeet Raj\" appear on the page in prominent positions (e.g., hero + footer)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "create",
+          "description": "Create the single-page marketing layout shell (hero + sections + footer) and ensure “Raj Foody” and “Jeet Raj” are prominently rendered (hero and footer)."
+        },
+        {
+          "path": "frontend/src/components/marketing/Layout.tsx",
+          "operation": "create",
+          "description": "Add a simple page layout wrapper (container, section spacing, header/footer slots) used by App to keep structure consistent."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Implement standard homepage sections with anchor navigation, menu list, gallery grid, testimonials, and contact form UI.",
+      "acceptanceCriteria": [
+        "Navbar links scroll to the correct sections on the same page.",
+        "Menu section displays at least 6 items with name, price, and description.",
+        "Contact section includes a visible form with fields: Name, Phone (or Email), Message, and a Submit button (form can be non-functional if backend is not implemented)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/marketing/TopNav.tsx",
+          "operation": "create",
+          "description": "Create a top navigation bar with anchor links to required sections (Hero, About, Menu, Why Choose Us, Gallery, Testimonials, Contact) and mobile-friendly responsive behavior."
+        },
+        {
+          "path": "frontend/src/components/marketing/sections/HeroSection.tsx",
+          "operation": "create",
+          "description": "Implement the hero section with English headline + short tagline, and a primary CTA button that scrolls to Contact. Use shadcn-ui components (e.g., Button) for consistent styling. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/marketing/sections/AboutSection.tsx",
+          "operation": "create",
+          "description": "Implement the About section with an English heading and editable placeholder paragraph sourced from the centralized config."
+        },
+        {
+          "path": "frontend/src/components/marketing/sections/MenuSection.tsx",
+          "operation": "create",
+          "description": "Implement the Menu/Offerings section rendering at least 6 items (name/price/description) from config; use card styling (shadcn-ui Card where appropriate). Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/marketing/sections/WhyChooseUsSection.tsx",
+          "operation": "create",
+          "description": "Implement the Why Choose Us section with 3–5 highlight bullets/cards sourced from config (icons optional)."
+        },
+        {
+          "path": "frontend/src/components/marketing/sections/GallerySection.tsx",
+          "operation": "create",
+          "description": "Implement a responsive gallery image grid (4 images) with captions optional; images sourced from config and mapped to generated assets."
+        },
+        {
+          "path": "frontend/src/components/marketing/sections/TestimonialsSection.tsx",
+          "operation": "create",
+          "description": "Implement Testimonials section with 3 items (name + short quote) sourced from config; use consistent card styling."
+        },
+        {
+          "path": "frontend/src/components/marketing/sections/ContactSection.tsx",
+          "operation": "create",
+          "description": "Implement Contact section with placeholder phone/email/address/opening hours plus a non-functional contact form UI (Name, Phone or Email, Message, Submit). Use shadcn-ui form primitives (Input/Textarea/Button) for consistent styling. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire all created sections into the single page in the required order and ensure section elements have matching ids for anchor scrolling (no orphan sections)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Apply a warm, food-themed design system (palette, typography, spacing) with consistent buttons/cards and hierarchy.",
+      "acceptanceCriteria": [
+        "The UI uses a consistent color palette and typography across all sections.",
+        "Primary/secondary buttons have consistent styling and hover/focus states.",
+        "The site maintains clear visual hierarchy (hero > sections > cards)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "create",
+          "description": "Define global CSS variables and base styles for a warm, appetizing palette (avoid blue/purple), typography, and consistent section spacing. Ensure focus/hover styles are visible and consistent site-wide."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Adjust/extend Tailwind theme tokens (if needed) to support the site’s warm palette and consistent radii/shadows without introducing new global stylesheet entry points."
+        },
+        {
+          "path": "frontend/src/components/marketing/theme.ts",
+          "operation": "create",
+          "description": "Add a small shared theme helper (e.g., reusable className strings for primary/secondary buttons, cards, section padding) to keep styling consistent across sections; used by section components and layout."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Create a centralized, editable frontend content/config layer and render all marketing content from it.",
+      "acceptanceCriteria": [
+        "Business name, owner name, and menu items are sourced from a centralized configuration object/file.",
+        "Changing the config values updates the rendered UI accordingly."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/content/rajFoodyContent.ts",
+          "operation": "create",
+          "description": "Create a centralized config object containing editable business info (shop name, owner name, tagline, about text, menu items, highlights, testimonials, contact placeholders, opening hours, and gallery image references)."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Refactor App to read business/shop content from the centralized config and pass relevant slices into each section component (no duplicated hardcoded copy across components)."
+        },
+        {
+          "path": "frontend/src/components/marketing/sections/HeroSection.tsx",
+          "operation": "modify",
+          "description": "Update Hero to receive and render shop name/owner name/tagline from the centralized config."
+        },
+        {
+          "path": "frontend/src/components/marketing/sections/MenuSection.tsx",
+          "operation": "modify",
+          "description": "Update Menu to receive and render menu items from the centralized config (minimum 6)."
+        },
+        {
+          "path": "frontend/src/components/marketing/sections/ContactSection.tsx",
+          "operation": "modify",
+          "description": "Update Contact to receive and render contact placeholders/opening hours from the centralized config."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Add the required generated images under frontend/public/assets/generated and wire them into Hero and Gallery.",
+      "acceptanceCriteria": [
+        "Generated images exist in frontend/public/assets/generated and are referenced directly by the frontend.",
+        "Hero uses the hero image; Gallery uses the gallery images in a grid layout."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/raj-foody-logo.dim_512x512.png",
+          "operation": "create",
+          "description": "Add the generated static asset file at this exact path for use in the navbar/footer branding (no backend routing)."
+        },
+        {
+          "path": "frontend/public/assets/generated/raj-foody-hero.dim_1600x900.png",
+          "operation": "create",
+          "description": "Add the generated static asset file at this exact path for use as the Hero background/feature image (no backend routing)."
+        },
+        {
+          "path": "frontend/public/assets/generated/raj-foody-gallery-1.dim_1200x800.png",
+          "operation": "create",
+          "description": "Add the generated static asset file at this exact path for use in the Gallery grid (no backend routing)."
+        },
+        {
+          "path": "frontend/public/assets/generated/raj-foody-gallery-2.dim_1200x800.png",
+          "operation": "create",
+          "description": "Add the generated static asset file at this exact path for use in the Gallery grid (no backend routing)."
+        },
+        {
+          "path": "frontend/public/assets/generated/raj-foody-gallery-3.dim_1200x800.png",
+          "operation": "create",
+          "description": "Add the generated static asset file at this exact path for use in the Gallery grid (no backend routing)."
+        },
+        {
+          "path": "frontend/public/assets/generated/raj-foody-gallery-4.dim_1200x800.png",
+          "operation": "create",
+          "description": "Add the generated static asset file at this exact path for use in the Gallery grid (no backend routing)."
+        },
+        {
+          "path": "frontend/src/content/rajFoodyContent.ts",
+          "operation": "modify",
+          "description": "Reference the exact generated image paths (frontend/public/assets/generated/raj-foody-hero.dim_1600x900.png and the 4 gallery images) inside the centralized content config so Hero/Gallery render from config."
+        },
+        {
+          "path": "frontend/src/components/marketing/sections/HeroSection.tsx",
+          "operation": "modify",
+          "description": "Wire the hero image from config to render frontend/public/assets/generated/raj-foody-hero.dim_1600x900.png as the hero visual (direct static reference)."
+        },
+        {
+          "path": "frontend/src/components/marketing/sections/GallerySection.tsx",
+          "operation": "modify",
+          "description": "Wire gallery images from config to render a responsive grid using frontend/public/assets/generated/raj-foody-gallery-1.dim_1200x800.png, raj-foody-gallery-2.dim_1200x800.png, raj-foody-gallery-3.dim_1200x800.png, raj-foody-gallery-4.dim_1200x800.png (direct static references)."
+        }
+      ]
+    }
+  ]
+}
